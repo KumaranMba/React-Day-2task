@@ -2,20 +2,18 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 
-const cardHeader =[{id:1,
-                    content:"FREE",
-                    payment:"$0/month"
-                },{ id:2,
-                    content:"PLUS",
-                    payment:"$9/month" 
-                },{
-                    id:3,
-                    content:"PRO",
-                    payment:"$49/month"
-                }]
+// datas to display the content
 
+const Datas =[{   
+                  cardHeader:"FREE",
+                  payment:"$0/month",
+                  button:{
+                    id:1,
+                    content:"BUTTON",
+                    disabled:true
+                  },
 
-const ListItems =[[{id:1,
+                  features:[{id:1,
                     content:"single User",
                     important: true,
                     disabled:false                    
@@ -52,8 +50,17 @@ const ListItems =[[{id:1,
                     content:"Monthly Status Reports",
                     important:false,
                     disabled:true
-                }]
-                ,[{id:1,
+                }]}
+                   ,{ 
+                    cardHeader:"PLUS",
+                    payment:"$9/month",
+                    button:{
+                        id:1,
+                        content:"BUTTON",
+                        disabled:true
+                      },
+
+                    features:[{id:1,
                      content:"5 Users",
                      important: true,
                      disabled:false                    
@@ -90,8 +97,17 @@ const ListItems =[[{id:1,
                      content:"Monthly Status Reports",
                      important:false,
                      disabled:true
-                 }]
-                 ,[{id:1,
+                 }] }
+                 ,{ 
+                    cardHeader:"PRO",
+                    payment:"$49/month",
+                    button:{
+                        id:1,
+                        content:"BUTTON",
+                        disabled:false
+                      },
+
+                    features:[{id:1,
                      content:"Unlimited Users",
                      important: true,
                      disabled:false                    
@@ -126,11 +142,11 @@ const ListItems =[[{id:1,
                  },{
                      id:8,
                      content:"Monthly Status Reports",
-                     important:false,
-                     disabled:true
-                 }]];
+                     important:true,
+                     disabled:false
+                 }]}];
 
 
 ReactDOM.createRoot(document.getElementById('root')).render( 
-<App ListItems ={ListItems} cardHeader = {cardHeader} /> 
+<App Datas={Datas} />  //passing data to the App component.
 )
